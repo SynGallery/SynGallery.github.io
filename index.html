@@ -191,6 +191,36 @@
     ]
   }
   </script>
+
+  <!-- Dataset showcase (reference + angles) -->
+  <style>
+    .dataset-angles {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 0.75rem;
+    }
+    .dataset-angles img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 6px;
+    }
+    .dataset-caption {
+      margin-top: 1rem;
+      font-size: 0.85rem;
+      color: #777;
+      text-align: center;
+    }
+    @media screen and (max-width: 768px) {
+      .dataset-angles { grid-template-columns: repeat(2, 1fr); }
+    }
+    #results-carousel .item img {
+      width: auto;
+      max-width: 100%;
+      max-height: 70vh;
+      margin: 0 auto;
+    }
+  </style>
 </head>
 <body>
 
@@ -305,32 +335,69 @@
 <!-- End paper abstract -->
 
 
-<!-- Image carousel — hidden until results are ready
-<section class="hero is-small">
+<!-- Dataset showcase: reference + angles -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">A Look Inside SynGallery</h2>
+    <div class="content has-text-centered" style="max-width: 760px; margin: 0 auto 2.25rem;">
+      <p>
+        Starting from a single catalog image, we place each painting in a procedurally generated 3D gallery and render it from multiple viewpoints under varied geometric and appearance conditions &mdash; all while preserving the exact identity of the original work.
+      </p>
+    </div>
+    <div class="dataset-angles">
+      <img src="static/images/angles/856_30.jpg" alt="Painting rendered at a 30 degree viewpoint" loading="lazy"/>
+      <img src="static/images/angles/856_60.jpg" alt="Painting rendered at a 60 degree viewpoint" loading="lazy"/>
+      <img src="static/images/angles/856_90.jpg" alt="Painting rendered at a 90 degree viewpoint" loading="lazy"/>
+      <img src="static/images/angles/856_120.jpg" alt="Painting rendered at a 120 degree viewpoint" loading="lazy"/>
+      <img src="static/images/angles/856_150.jpg" alt="Painting rendered at a 150 degree viewpoint" loading="lazy"/>
+    </div>
+    <p class="dataset-caption">A single painting rendered from five viewpoints in a procedurally generated gallery.</p>
+  </div>
+</section>
+<!-- End dataset showcase -->
+
+
+<!-- Dataset sample carousel -->
+<section class="hero is-small is-light">
   <div class="hero-body">
     <div class="container">
+      <h2 class="title is-3 has-text-centered">Sample Renders</h2>
       <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
-        <img src="static/images/carousel1.jpg" alt="First research result visualization" loading="lazy"/>
-        <h2 class="subtitle has-text-centered">First image description.</h2>
+        <div class="item">
+          <img src="static/images/random/2_60.jpg" alt="Synthetic gallery render sample" loading="lazy"/>
+        </div>
+        <div class="item">
+          <img src="static/images/random/74_120.jpg" alt="Synthetic gallery render sample" loading="lazy"/>
+        </div>
+        <div class="item">
+          <img src="static/images/random/1321_30.jpg" alt="Synthetic gallery render sample" loading="lazy"/>
+        </div>
+        <div class="item">
+          <img src="static/images/random/1474_150.jpg" alt="Synthetic gallery render sample" loading="lazy"/>
+        </div>
+        <div class="item">
+          <img src="static/images/random/1811_90.jpg" alt="Synthetic gallery render sample" loading="lazy"/>
+        </div>
+        <div class="item">
+          <img src="static/images/random/2030_60.jpg" alt="Synthetic gallery render sample" loading="lazy"/>
+        </div>
+        <div class="item">
+          <img src="static/images/random/2063_30.jpg" alt="Synthetic gallery render sample" loading="lazy"/>
+        </div>
+        <div class="item">
+          <img src="static/images/random/2180_90.jpg" alt="Synthetic gallery render sample" loading="lazy"/>
+        </div>
+        <div class="item">
+          <img src="static/images/random/2389_150.jpg" alt="Synthetic gallery render sample" loading="lazy"/>
+        </div>
+        <div class="item">
+          <img src="static/images/random/2421_60.jpg" alt="Synthetic gallery render sample" loading="lazy"/>
+        </div>
       </div>
-      <div class="item">
-        <img src="static/images/carousel2.jpg" alt="Second research result visualization" loading="lazy"/>
-        <h2 class="subtitle has-text-centered">Second image description.</h2>
-      </div>
-      <div class="item">
-        <img src="static/images/carousel3.jpg" alt="Third research result visualization" loading="lazy"/>
-        <h2 class="subtitle has-text-centered">Third image description.</h2>
-     </div>
-     <div class="item">
-      <img src="static/images/carousel4.jpg" alt="Fourth research result visualization" loading="lazy"/>
-      <h2 class="subtitle has-text-centered">Fourth image description.</h2>
     </div>
   </div>
-</div>
 </section>
--->
-<!-- End image carousel -->
+<!-- End dataset sample carousel -->
 
 
 <!-- Acknowledgments -->
