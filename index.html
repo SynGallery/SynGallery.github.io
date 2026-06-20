@@ -199,14 +199,22 @@
       grid-template-columns: repeat(5, 1fr);
       gap: 0.75rem;
     }
+    .dataset-angle { margin: 0; }
     .dataset-angles img {
       width: 100%;
       height: auto;
       display: block;
       border-radius: 6px;
     }
+    .dataset-angle figcaption {
+      margin-top: 0.45rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #555;
+      text-align: center;
+    }
     .dataset-caption {
-      margin-top: 1rem;
+      margin-top: 1.25rem;
       font-size: 0.85rem;
       color: #777;
       text-align: center;
@@ -214,10 +222,8 @@
     @media screen and (max-width: 768px) {
       .dataset-angles { grid-template-columns: repeat(2, 1fr); }
     }
-    #results-carousel .item img {
-      width: auto;
-      max-width: 100%;
-      max-height: 70vh;
+    #results-carousel {
+      max-width: 700px;
       margin: 0 auto;
     }
   </style>
@@ -345,11 +351,26 @@
       </p>
     </div>
     <div class="dataset-angles">
-      <img src="static/images/angles/856_30.jpg" alt="Cavalier and Shepherd rendered at a 30 degree viewpoint" loading="lazy"/>
-      <img src="static/images/angles/856_60.jpg" alt="Cavalier and Shepherd rendered at a 60 degree viewpoint" loading="lazy"/>
-      <img src="static/images/angles/856_90.jpg" alt="Cavalier and Shepherd rendered at a 90 degree viewpoint" loading="lazy"/>
-      <img src="static/images/angles/856_120.jpg" alt="Cavalier and Shepherd rendered at a 120 degree viewpoint" loading="lazy"/>
-      <img src="static/images/angles/856_150.jpg" alt="Cavalier and Shepherd rendered at a 150 degree viewpoint" loading="lazy"/>
+      <figure class="dataset-angle">
+        <img src="static/images/angles/856_150.jpg" alt="Cavalier and Shepherd rendered at a 150 degree viewing angle" loading="lazy"/>
+        <figcaption>150&deg;</figcaption>
+      </figure>
+      <figure class="dataset-angle">
+        <img src="static/images/angles/856_120.jpg" alt="Cavalier and Shepherd rendered at a 120 degree viewing angle" loading="lazy"/>
+        <figcaption>120&deg;</figcaption>
+      </figure>
+      <figure class="dataset-angle">
+        <img src="static/images/angles/856_90.jpg" alt="Cavalier and Shepherd rendered at a 90 degree viewing angle" loading="lazy"/>
+        <figcaption>90&deg;</figcaption>
+      </figure>
+      <figure class="dataset-angle">
+        <img src="static/images/angles/856_60.jpg" alt="Cavalier and Shepherd rendered at a 60 degree viewing angle" loading="lazy"/>
+        <figcaption>60&deg;</figcaption>
+      </figure>
+      <figure class="dataset-angle">
+        <img src="static/images/angles/856_30.jpg" alt="Cavalier and Shepherd rendered at a 30 degree viewing angle" loading="lazy"/>
+        <figcaption>30&deg;</figcaption>
+      </figure>
     </div>
     <p class="dataset-caption"><a href="https://www.metmuseum.org/art/collection/search/435858" target="_blank"><em>Cavalier and Shepherd</em></a> by Francesco Casanova &mdash; rendered from five viewpoints in a procedurally generated gallery.</p>
   </div>
