@@ -443,11 +443,15 @@
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
           <h2 class="title is-3">Acknowledgments</h2>
-          <!-- Logo row: flex-basis values are tuned so both marks render at the same
-               optical height (~62px) and shrink proportionally on narrow viewports. -->
+          <!-- Logo row: flex-basis values are tuned so every mark renders at the same
+               optical height (~62px) and shrinks proportionally on narrow viewports.
+               basis = 62 x the logo's aspect ratio (240=3.85, 215=3.46, 390=6.27). -->
           <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 1.5rem 3rem; margin: 0 0 1.5rem;">
             <a href="https://articollect.io" target="_blank" style="flex: 0 1 240px;">
               <img src="static/images/articollect-logo.png" alt="ArtiCollect" loading="lazy" style="width: 100%; height: auto;">
+            </a>
+            <a href="https://www.greenmatter.ai/" target="_blank" style="flex: 0 1 215px;">
+              <img src="static/images/greenmatterai-logo-on-black.png" alt="GreenMatterAI" loading="lazy" style="width: 100%; height: auto;">
             </a>
             <div style="flex: 0 1 390px;">
               <img src="static/images/eosc-arena-logo.png" alt="EOSC-ARENA" loading="lazy" style="width: 100%; height: auto;">
@@ -456,6 +460,9 @@
           <div class="content has-text-centered">
             <p>
               This research was conducted in collaboration with <a href="https://articollect.io" target="_blank">ArtiCollect</a>, who funded the work, contributed to data collection, and provided domain expertise in art.
+            </p>
+            <p>
+              We also thank <a href="https://www.greenmatter.ai/" target="_blank">GreenMatterAI</a> for contributing their expertise in large-scale synthetic data generation for computer vision.
             </p>
             <p>
               This work was supported by the European Union through the EOSC-ARENA project (AI Research Enhancement through Networked Agents), Grant Agreement No.&nbsp;101292597.
