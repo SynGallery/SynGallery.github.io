@@ -228,6 +228,36 @@
     @media screen and (max-width: 768px) {
       .dataset-angles { grid-template-columns: repeat(2, 1fr); }
     }
+    /* Acknowledgment logo row. Each flex-basis is 62px x that logo's aspect
+       ratio, so every mark renders at the same optical height. flex-shrink is
+       proportional to the basis, so they keep that shared height as the row
+       narrows - no per-breakpoint retuning. Wraps only on mobile, where fitting
+       one line would leave the marks too small to read. */
+    .ack-logos {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem 2rem;
+      margin: 0 0 1.5rem;
+    }
+    .ack-logos img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .ack-articollect { flex: 0 1 240px; } /* 1783x463, aspect 3.85 */
+    .ack-greenmatter { flex: 0 1 229px; } /*  458x125, aspect 3.69 */
+    .ack-eosc        { flex: 0 1 390px; } /* 2377x379, aspect 6.27 */
+    @media screen and (min-width: 769px) {
+      .ack-logos { flex-wrap: nowrap; }
+    }
+    /* The acknowledgments column runs full width so the logo row has room for
+       one line; hold the prose to the measure it had at is-four-fifths. */
+    .ack-text {
+      max-width: 48rem;
+      margin: 0 auto;
+    }
     #results-carousel {
       max-width: 700px;
       margin: 0 auto;
@@ -441,23 +471,20 @@
   <div class="hero-body">
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
+        <div class="column">
           <h2 class="title is-3">Acknowledgments</h2>
-          <!-- Logo row: flex-basis values are tuned so every mark renders at the same
-               optical height (~62px) and shrinks proportionally on narrow viewports.
-               basis = 62 x the logo's aspect ratio (240=3.85, 215=3.46, 390=6.27). -->
-          <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 1.5rem 3rem; margin: 0 0 1.5rem;">
-            <a href="https://articollect.io" target="_blank" style="flex: 0 1 240px;">
-              <img src="static/images/articollect-logo.png" alt="ArtiCollect" loading="lazy" style="width: 100%; height: auto;">
+          <div class="ack-logos">
+            <a href="https://articollect.io" target="_blank" class="ack-articollect">
+              <img src="static/images/articollect-logo.png" alt="ArtiCollect" loading="lazy">
             </a>
-            <a href="https://www.greenmatter.ai/" target="_blank" style="flex: 0 1 215px;">
-              <img src="static/images/greenmatterai-logo-on-black.png" alt="GreenMatterAI" loading="lazy" style="width: 100%; height: auto;">
+            <a href="https://www.greenmatter.ai/" target="_blank" class="ack-greenmatter">
+              <img src="static/images/greenmatterai-logo-gray.png" alt="GreenMatterAI" loading="lazy">
             </a>
-            <div style="flex: 0 1 390px;">
-              <img src="static/images/eosc-arena-logo.png" alt="EOSC-ARENA" loading="lazy" style="width: 100%; height: auto;">
+            <div class="ack-eosc">
+              <img src="static/images/eosc-arena-logo.png" alt="EOSC-ARENA" loading="lazy">
             </div>
           </div>
-          <div class="content has-text-centered">
+          <div class="content has-text-centered ack-text">
             <p>
               This research was conducted in collaboration with <a href="https://articollect.io" target="_blank">ArtiCollect</a>, who funded the work, contributed to data collection, and provided domain expertise in art.
             </p>
