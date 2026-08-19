@@ -282,6 +282,13 @@
       max-width: 48rem;
       margin: 0 auto;
     }
+    .poster-preview {
+      width: 100%;
+      height: auto;
+      display: block;
+      border: 1px solid #e5e5e5;
+      border-radius: 6px;
+    }
     #results-carousel {
       max-width: 700px;
       margin: 0 auto;
@@ -358,6 +365,14 @@
                         class="external-link button is-normal is-rounded is-dark">
                         <span class="icon"><i class="fas fa-layer-group"></i></span>
                         <span>HF Collection</span>
+                        </a>
+                      </span>
+                      <!-- Poster -->
+                      <span class="link-block">
+                        <a href="static/pdfs/poster.pdf" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                        <span>Poster</span>
                         </a>
                       </span>
                     </div>
@@ -488,6 +503,27 @@
   </div>
 </section>
 <!-- End dataset sample carousel -->
+
+
+<!-- Paper poster. The template ships an <iframe> of the PDF here, but mobile
+     browsers will not render a PDF inline anyway, so an iframe would cost every
+     visitor the 7.7 MB download for nothing. A rendered preview stands in and
+     links out to the PDF. Downsampled to 150 dpi from a 36 MB print original. -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered">Poster</h2>
+      <a href="static/pdfs/poster.pdf" target="_blank">
+        <img src="static/images/poster_preview.jpg" alt="SynGallery poster presented at the VISART VIII workshop at ECCV 2026" loading="lazy" class="poster-preview">
+      </a>
+      <p class="dataset-caption">
+        Presented at VISART VIII, ECCV 2026 &middot; 1437 &times; 1036 mm &middot;
+        <a href="static/pdfs/poster.pdf" target="_blank">download the PDF</a> (7.7 MB)
+      </p>
+    </div>
+  </div>
+</section>
+<!-- End paper poster -->
 
 
 <!-- Acknowledgments -->
