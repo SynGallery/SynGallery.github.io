@@ -11,7 +11,7 @@
   <meta name="title" content="SynGallery: A Synthetic Gallery of Real Paintings for Instance-Level Artwork Recognition">
   <meta name="description" content="A synthetic gallery dataset for instance-level artwork retrieval: 24,490 rendered views of 4,898 Met paintings, a stronger training signal than studio photos.">
   <meta name="keywords" content="synthetic data, artwork retrieval, instance-level recognition, painting recognition, art painting retrieval, procedural 3D rendering, sim-to-real, Met benchmark, computer vision">
-  <meta name="author" content="Patryk Bartkowiak, Jakub Markil, Bartosz Kotrys, Dominik L. Michels, Sören Pirk, Wojtek Palubicki">
+  <meta name="author" content="Patryk Bartkowiak, Jakub Markil, Bartosz Kotrys, Dominik L. Michels, Sören Pirk, Wojtek Pałubicki">
   <meta name="robots" content="index, follow">
   <meta name="language" content="English">
 
@@ -169,7 +169,7 @@
       },
       {
         "@type": "Person",
-        "name": "Wojtek Palubicki",
+        "name": "Wojtek Pałubicki",
         "affiliation": [
           {
             "@type": "Organization",
@@ -267,7 +267,7 @@
       display: block;
     }
     .ack-articollect { flex: 0 1 240px; } /* 1783x463, aspect 3.85 */
-    .ack-greenmatter { flex: 0 1 229px; } /*  458x125, aspect 3.69 */
+    .ack-pcss       { flex: 0 1 170px; } /*  200x73, aspect 2.74 */
     .ack-eosc        { flex: 0 1 390px; } /* 2377x379, aspect 6.27 */
     @media screen and (min-width: 769px) {
       .ack-logos { flex-wrap: nowrap; }
@@ -277,13 +277,6 @@
     .ack-text {
       max-width: 48rem;
       margin: 0 auto;
-    }
-    .poster-preview {
-      width: 100%;
-      height: auto;
-      display: block;
-      border: 1px solid #e5e5e5;
-      border-radius: 6px;
     }
     #results-carousel {
       max-width: 700px;
@@ -318,7 +311,7 @@
               <span class="author-block">
                 <a href="https://www.uni-kiel.de/en/person/pirk-soeren-59195" target="_blank">Sören Pirk</a><sup>4,5</sup>,</span>
               <span class="author-block">
-                <a href="https://wp.faculty.wmi.amu.edu.pl/" target="_blank">Wojtek Palubicki</a><sup>1,5</sup></span>
+                <a href="https://wp.faculty.wmi.amu.edu.pl/" target="_blank">Wojtek Pałubicki</a><sup>1,5</sup></span>
           </div>
 
           <div class="is-size-5 publication-authors">
@@ -501,25 +494,7 @@
 <!-- End dataset sample carousel -->
 
 
-<!-- Paper poster. The template ships an <iframe> of the PDF here, but mobile
-     browsers will not render a PDF inline anyway, so an iframe would cost every
-     visitor the 7.7 MB download for nothing. A rendered preview stands in and
-     links out to the PDF. Downsampled to 150 dpi from a 36 MB print original. -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container is-max-desktop">
-      <h2 class="title is-3 has-text-centered">Poster</h2>
-      <a href="static/pdfs/poster.pdf" target="_blank">
-        <img src="static/images/poster_preview.jpg" alt="SynGallery poster presented at the VISART VIII workshop at ECCV 2026" loading="lazy" class="poster-preview">
-      </a>
-      <p class="dataset-caption">
-        Presented at VISART VIII, ECCV 2026 &middot; 1437 &times; 1036 mm &middot;
-        <a href="static/pdfs/poster.pdf" target="_blank">download the PDF</a> (7.7 MB)
-      </p>
-    </div>
-  </div>
-</section>
-<!-- End paper poster -->
+
 
 
 <!-- Acknowledgments -->
@@ -533,11 +508,11 @@
             <a href="https://articollect.io" target="_blank" class="ack-articollect">
               <img src="static/images/articollect-logo.png" alt="ArtiCollect" loading="lazy">
             </a>
-            <a href="https://www.greenmatter.ai/" target="_blank" class="ack-greenmatter">
-              <img src="static/images/greenmatterai-logo-gray.png" alt="GreenMatterAI" loading="lazy">
-            </a>
             <a href="https://arena.ai4eosc.eu/" target="_blank" class="ack-eosc">
               <img src="static/images/eosc-arena-logo.png" alt="EOSC-ARENA" loading="lazy">
+            </a>
+            <a href="https://www.pcss.pl/" target="_blank" rel="noopener noreferrer" class="ack-pcss">
+              <img src="static/images/pcss-logo.png" alt="Poznańskie Centrum Superkomputerowo-Sieciowe (PCSS)" width="200" height="73" loading="lazy">
             </a>
           </div>
           <div class="content has-text-centered ack-text">
@@ -545,10 +520,10 @@
               This research was conducted in collaboration with <a href="https://articollect.io" target="_blank">ArtiCollect</a>, who funded the work, contributed to data collection, and provided domain expertise in art.
             </p>
             <p>
-              We also thank <a href="https://www.greenmatter.ai/" target="_blank">GreenMatterAI</a> for contributing their expertise in large-scale synthetic data generation for computer vision.
+              This work was supported by the European Union through the <a href="https://arena.ai4eosc.eu/" target="_blank">EOSC-ARENA</a> project (AI Research Enhancement through Networked Agents), Grant Agreement No.&nbsp;101292597.
             </p>
             <p>
-              This work was supported by the European Union through the <a href="https://arena.ai4eosc.eu/" target="_blank">EOSC-ARENA</a> project (AI Research Enhancement through Networked Agents), Grant Agreement No.&nbsp;101292597.
+              The authors thank <a href="https://www.pcss.pl/" target="_blank" rel="noopener noreferrer">Poznańskie Centrum Superkomputerowo-Sieciowe (PCSS)</a> for providing the computational resources used in the experiments.
             </p>
           </div>
         </div>
@@ -571,7 +546,7 @@
     </div>
     <pre id="bibtex-code"><code>@misc{bartkowiak2026syngallery,
       title={SynGallery: A Synthetic Gallery of Real Paintings for Instance-Level Artwork Recognition},
-      author={Patryk Bartkowiak and Jakub Markil and Bartosz Kotrys and Dominik Michels and Sören Pirk and Wojtek Palubicki},
+      author={Patryk Bartkowiak and Jakub Markil and Bartosz Kotrys and Dominik Michels and Sören Pirk and Wojtek Pałubicki},
       year={2026},
       eprint={2607.18907},
       archivePrefix={arXiv},
