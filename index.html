@@ -100,6 +100,7 @@
   <script defer src="static/js/bulma-carousel.min.js"></script>
   <script defer src="static/js/bulma-slider.min.js"></script>
   <script defer src="static/js/index.js"></script>
+  <script defer src="static/js/figures.js"></script>
 
   <!-- Structured Data for Academic Papers -->
   <script type="application/ld+json">
@@ -405,6 +406,19 @@
 </section>
 <!-- End teaser -->
 
+<!-- At a glance -->
+<section class="section viz-root" style="padding-top: 0.5rem; padding-bottom: 2rem;">
+  <div class="container">
+    <div class="stat-strip">
+      <div class="stat-tile"><span class="stat-value">4,898</span><span class="stat-label">real paintings from the Met</span></div>
+      <div class="stat-tile"><span class="stat-value">24,490</span><span class="stat-label">rendered gallery views</span></div>
+      <div class="stat-tile"><span class="stat-value">67.18 &rarr; 73.47</span><span class="stat-label">GAP&#8315;, studio photos vs. renders at the same budget</span></div>
+      <div class="stat-tile"><span class="stat-value">35.97 &rarr; 38.48</span><span class="stat-label">GAP on the full Met benchmark, with SynGallery added</span></div>
+    </div>
+  </div>
+</section>
+<!-- End at a glance -->
+
 <!-- Paper abstract -->
 <section class="section hero is-light">
   <div class="container is-max-desktop">
@@ -439,6 +453,32 @@
   </div>
 </section>
 <!-- End method overview -->
+
+<!-- Mix and scale -->
+<section class="section hero is-light viz-root">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Renders beat studio photos</h2>
+    <p class="section-lead">Replace the real catalog photos with SynGallery renders at the same number of images, then add more renders. Every step towards synthetic data helps.</p>
+  </div>
+  <div class="viz-card" id="fig-mix">
+    <div class="viz-title">Retrieval quality by training data</div>
+    <div class="viz-subtitle">Hover a point for the numbers; pick the metric.</div>
+  </div>
+</section>
+<!-- End mix and scale -->
+
+<!-- Ablation -->
+<section class="section viz-root">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Viewpoints matter most</h2>
+    <p class="section-lead">Varying one generation parameter at a time shows where the gain comes from: geometric variation, not photographic realism.</p>
+  </div>
+  <div class="viz-card" id="fig-ablation">
+    <div class="viz-title">Dataset ablation, closed painting world</div>
+    <div class="viz-subtitle">Every model is trained on renders only.</div>
+  </div>
+</section>
+<!-- End ablation -->
 
 
 <!-- Dataset sample carousel -->
