@@ -107,7 +107,7 @@
   function mix(card, W) {
     var narrow = W < 560;
     var state = card._state || (card._state = { metric: 'cgapm' });
-    var H = narrow ? 300 : 340, L = 48, R = narrow ? 74 : 110, T = 20, B = 62;
+    var H = narrow ? 300 : 340, L = 44, R = narrow ? 52 : 110, T = 20, B = 62;
     chips(card, 'Metric', MIX.metrics.map(function (m) { return { id: m.id, label: m.label }; }), state.metric,
       function (id) { state.metric = id; draw(); });
     var svg = el('svg', { class: 'viz-svg', role: 'img', width: W, height: H, viewBox: '0 0 ' + W + ' ' + H }, card);
@@ -136,7 +136,9 @@
         el('line', { class: 'grid-line', x1: L, x2: W - R, y1: Y(v), y2: Y(v) }, svg);
         el('text', { class: 'tick-label', x: L - 8, y: Y(v) + 4, 'text-anchor': 'end' }, svg).textContent = v;
       });
+      // nine category labels collide on a phone: keep the two ends and the largest set
       MIX.points.forEach(function (p, i) {
+        if (narrow && [0, 5, 8].indexOf(i) < 0) return;
         el('text', { class: 'tick-label', x: X(i), y: H - B + 18, 'text-anchor': 'middle' }, svg).textContent = p.x;
       });
       el('text', { x: (X(0) + X(5)) / 2, y: H - B + 40, 'text-anchor': 'middle' }, svg).textContent = narrow ? 'synthetic share' : 'synthetic share, 12,403 images';
@@ -244,7 +246,10 @@
       chart(card, Math.max(280, w));
     }
     render();
-    window.addEventListener('resize', function () { clearTimeout(timer); timer = setTimeout(render, 150); });
+    // Watch the card itself, not the window: a layout change without a window
+    // resize (a viewport switch, a font load, a scrollbar) must redraw too.
+    if (window.ResizeObserver) new ResizeObserver(function () { clearTimeout(timer); timer = setTimeout(render, 100); }).observe(card);
+    else window.addEventListener('resize', function () { clearTimeout(timer); timer = setTimeout(render, 150); });
   }
 
   function init() {
